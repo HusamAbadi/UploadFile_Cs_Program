@@ -8,7 +8,6 @@ namespace UploadFileProg.Controllers
         {
             return View();
         }
-
         [HttpPost]
         public IActionResult UploadFile(IFormFile file)
         {
