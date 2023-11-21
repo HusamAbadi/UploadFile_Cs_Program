@@ -1,0 +1,25 @@
+﻿@{
+    ViewData["Title"] = "UploadFile";
+}
+<div class="bg-light p-3 border-dark border rounded">
+    @{
+        if (@ViewBag.success)
+        {
+            <h1>A @((string?)ViewData["filename"])  File upload was successfull</h1>
+            <div class="col-md-4">
+                <img src="~/images/@ViewData["filename"]" class="img-thumbnail 140" />
+            </div>
+        }
+        else
+        {
+            <h1>
+                A @((string?)ViewData["filename"]) The Upload was unsuccessfull.
+            </h1>
+        }
+
+    }
+    <div class="row">
+        <div class="col-md-11"></div>
+        <a asp-controller="Home" asp-action="Index" class="btn btn-outline-info float-end">Back to Home</a>
+    </div>
+</div>

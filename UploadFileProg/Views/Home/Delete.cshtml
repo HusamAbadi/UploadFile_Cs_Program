@@ -1,0 +1,18 @@
+﻿@{
+    ViewData["Title"] = "Result of delete";
+}
+<div>
+    @if ((bool)ViewData["success"]!)
+    {
+        <h3>The file deleted successfulll!</h3>
+    }
+    else
+    {
+        <h3>The file was not deleted</h3>
+    }
+
+    <div class="row">
+        <div class="col-md-11"></div>
+        <a asp-action="Index" class="btn btn-info float-end">Back to Home</a>
+    </div>
+</div>

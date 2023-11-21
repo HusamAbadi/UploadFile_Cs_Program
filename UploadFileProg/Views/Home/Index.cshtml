@@ -1,0 +1,31 @@
+﻿@model FilesModel;
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">List of uploaded images</h1>
+</div>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Picture</th>
+            <th>FileName</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var picture in Model.FileNames!)
+        {
+            <tr>
+                <td>
+                    <img src="~/images/@picture" class="img-thumbnail" width="140" />
+                </td>
+                <td>@picture</td>
+                <td>
+                    <a asp-controller="Home" asp-action="Delete" asp-route-delfile="@picture">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
